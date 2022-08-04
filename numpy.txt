@@ -1,0 +1,2 @@
+1. np.argsort( [.... valid list] )    # Returns the indices that would sort an array
+2. 

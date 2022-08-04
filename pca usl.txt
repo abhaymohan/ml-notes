@@ -1,0 +1,50 @@
+=======> PCA - Principal Component Analysis and Manifold Learning
+# model import 
+
+>> from sklearn.decomposition import PCA
+>> pca_model = PCA(n_components = 3)  
+// n_component is a hyperparameter
+>> pca_model.fit( scaled_x )   
+>> pca_model.transform(scaled_x)  
+# it will convert data from n features to principal components(n_components = 3)
+# we can also do above 2 steps in 1 command
+>> pc_results = pca_model.fit_transform(scaled_x)
+
+
+
+(but before data to model we have to scale it whose commands are also written below)
+# data scaling commands
+>> from sklearn.preprocessing import StandardScaler
+>> scaler = StandardScaler()
+>> scaled_X = scaler.fit_transform(df)   
+# df is dataframe of data we have read by pandas
+
+
+==========> THEORY
+
+1. PCA is a dimensionality reduction algorithm.
+
+2. PCA outcomes
+=> Reduce the number of dimensions in data.
+=> helps reduce N features to a desired smaller set of components through a transformation.
+=>* it does not simply selects a subset of features. 
+=> Show which features explain the most variance in the data.
+
+3. Reasons of dimension reduction
+=> helps visualize and understand complex data sets
+=> can also act as simpler data set for training data for machine learning algorithms
+=> reduce dimensions then train ML algorithm on changed or smaller data.
+
+4. Variance explained 
+=> we've often seen that certain features are more important or have more explanatory power than other features.
+=> for example, size of a house is probably much more important than the color of a house when explaining the price of a house for sale. 
+
+5*. PCA operates by creating a new set of dimensions (the principal components) that are normalized linear combinations of the original features.
+
+6. Standardise the data the first step in PCA is to standardise the data and ways of standardisation are.
+=>using standard scaler from scikit-learn.
+
+=============> Hyperparameters tuning
+
+1. n_components
+n_components takes the interger value that specify the number of principal components you want.

@@ -1,0 +1,5 @@
+MATPLOTLIB
+
+1. plt.figure(figsize=(8,6), dpi = 100)    # we can change values in figsize and dpi to get more clear figure.
+
+2. 
