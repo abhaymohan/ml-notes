@@ -1,0 +1,6 @@
+UNSUPERVISED LEARNING ALGORITHM LIST 
+
+1. kmeans clustering
+2. Density-based spatial clustering of applications with noise
+3. hierarchical clustering
+4. principal component Analysis
