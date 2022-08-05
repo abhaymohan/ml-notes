@@ -16,7 +16,27 @@ DEALING WITH MISSING DATA
     • in the case where only few rows are missing the feature data, we will
       consider either dropping these few rows or filling in with a resonable
       assumption based off domain knowledge.
+    • dropping a row should be done carefully as dropping a row
+      we actually delete one data point and all information related to it.
+    • whereas filling of the values can be only done with domain knowledge.
 
-    
 
+
+3. Filling or dropping data based on columns
+    • very simple to do 
+    • no longer need to worry about that feature in future
+        • and in future we recieve new data than we also have to remove
+          that feature from that data too as our model doesn't know about it.
+        • potential to lose a feature with possible important signal
+        • should consider drop feature approach when many rows are nan.
+
+
+4. dropping row or column to treat missing values should be done
+carefully as we are deleting complete piece of information which may 
+affect our model performance.
+
+5. filling data in missing values should also be done 
+with domain knowledge as wrong data will cause model to read 
+wrong trend or wrong information which will greatly affect model 
+prediction.
     
