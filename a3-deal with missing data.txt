@@ -1,0 +1,20 @@
+DEALING WITH MISSING DATA 
+
+1. Evaluating missing data.
+2. Filling or Dropping data based on Rows
+3. Fixing missing data based on columns (Filling or Dropping)
+
+==============================
+
+1.Evaluating missing data
+    • we will be evaluating how much data is missing.
+    • here we basically use visualization and dataset analysis to see
+      which feature is missing how much data.
+        -> it could be in percentage or in numbers 
+
+2. Filling or dropping data based on Rows
+    • in the case where only few rows are missing the feature data, we will
+      consider either dropping these few rows or filling in with a resonable
+      assumption based off domain knowledge.
+
+    
