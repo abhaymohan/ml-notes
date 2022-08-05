@@ -1,0 +1,81 @@
+Feature Engineering and Data preparation
+
+
+====================================
+==> dataset limitation for machine learning
+mahcine learning model expects a dataset whose features
+have values in integer format or decimal format.
+so often for categorical features we relate each 
+category to some numerical value to stick to this
+rule.
+like boy - 0 and girl - 1
+
+===================================
+==> Feature engineering and data preparation
+
+1. In the real world not every data set is machine learning
+ready, 
+    • we often need to perform data cleaning or 
+    • try to produce more useable features.
+        -> this we have done in PCA  
+        -> and also in Polynomial regression 
+           where we have seen some features together do
+           have more impact than there individual impact 
+           and these terms were called interaction terms.
+
+
+2. what is feature Engineering
+it is the process of using domain knowledge to extract
+features from raw data via data mining techniques.
+
+3. transforming information
+    • very common for string data
+        -> most algorithm can not accept string data
+           (we can't multiply "red" by a numeric coefficient)
+
+    • we can use two approached for transforming a string 
+      data to numerical data.
+        -> integer encoding
+        -> one hot encoding (DUMMY VARIABLES)
+
+4. Integer encoding
+    • we can directly convert categories to integers 
+        ex: usa - 0 , india - 1, china - 2
+    • possible issue is implied ordering and relationship
+      (ordnal variable)
+         -> here in above example we can see that the numbering
+            of countries is in order and ml algorithm may treat 
+            this as an information in data but actually it is not 
+            because here we have just gave numerical value to 
+            categorical features and thus this may affect the result 
+            of our model.
+    • we can say integer encoding in some way seems like a 
+      information to ml model and which is correct as it in
+      a order and had relationship like 1 < 2 and 2 > 1 etc.
+    
+    • in above example the model may assume that china is twice
+      the value of india and like that and may use this 
+      information in model tuning(hyper parameter tuning).
+
+    • but integer encoding may work out in places where categories do have
+      a relationship 
+      like : temp = hot, warm, cold
+             spice level = mild, normal, hot
+
+    • pros 
+        -> very easy to do and understand 
+        -> does not increase number of features (one hot encoding do).
+    • cons 
+        -> implies ordered relationship berween categories
+
+5. One hot encoding (dummy variables)
+    • convert each category into individual features that are either 0 or 1.
+        ex:  categoreis: use, canada , india
+        after one hot encoding
+        usa canada  india
+        1   0       0
+        0   1       0
+        0   0       1
+
+    so in actual dataset where "use" was there than there "usa" will have 1
+    and else will have zeros.
