@@ -1,6 +1,13 @@
 Feature Engineering and Data preparation
 
-
+==> issues we will address in feature engineering and data cleaning
+1. outliers in data
+2. missing data
+3. categorical data
+• not every issue here is strictly "feature engineering", but could also be
+called data cleaning.
+• feature engineering in general be data and domain dependent
+there is no one solution fits all problems.
 ====================================
 ==> dataset limitation for machine learning
 mahcine learning model expects a dataset whose features
@@ -79,3 +86,22 @@ features from raw data via data mining techniques.
 
     so in actual dataset where "use" was there than there "usa" will have 1
     and else will have zeros.
+
+    • 1 is that category and 0 otherwise
+    • no ordered relationship is implied between categories.
+    • however we greatly expanded our feature set ,many more columns
+    • we can try to reduce this feature column expansion by creating higher 
+      level categories.
+        -> but to achive higher level tuning it may require a lot of tuning and
+           domain experience.
+      ex: regions or continents instead of countries. 
+      (for dataset of social media users)
+    • pros
+        -> no ordering implied
+    • cons
+        -> potential to create many more feature columns and coefficients
+        -> dummy variable trap (mathematically known as multi-collinearity) problem
+        -> not easy to add new feature.
+
+
+

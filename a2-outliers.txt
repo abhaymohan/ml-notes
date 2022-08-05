@@ -1,0 +1,21 @@
+OUTLIERS
+
+1. definition of outlier 
+how do we consider a point as outlier
+• range and limits.
+• percentage of data.
+
+these are both very domain dependent.
+
+2. range and limits
+we need to decide what will constitute an outlier with some
+methodology 
+    • InterQuartile range (IQR)
+    • standard deviation 
+    • visalize or domain limit value
+
+3. percentage of data
+• if a large percentage of dataset is being labeled as an outlier 
+then we actually just have a wide distribution, not outliers.
+• limit outliers to few percentage point a most.
+
