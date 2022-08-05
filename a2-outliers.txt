@@ -29,3 +29,21 @@ methodology
 then we actually just have a wide distribution, not outliers.
 • limit outliers to few percentage point at most.
 
+4. Outliers in many cases doesn't follow up the trend 
+like in house dataset where 
+    • price of house is highly correlated with quality so basic trend is like
+      price of house is high as the quality rating increases.
+        • so the houses whose quality rating is high and prices higher than houses
+          with same rating but we may not classify them as valid outliers as they
+          are following the trend of high price and high rating and having higher price
+          than other houses may be due to other features.
+        • but the houses whose quality rating is high but there price is low as compared to 
+          other houses at same quality rating so these houses doesn't follow the trend
+          and could be kept in outliers category.
+    • we see such trends for highly correlated features to have good intuition of
+      trend.
+
+    • so these outliers which do not follow the trend actually affect model 
+      tendency to catch this information of trend and setting up the coefficients.
+      
+
