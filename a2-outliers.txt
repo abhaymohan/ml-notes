@@ -4,8 +4,18 @@ OUTLIERS
 how do we consider a point as outlier
 • range and limits.
 • percentage of data.
-
 these are both very domain dependent.
+
+** once we have removed point from our dataset by considering 
+it as outlier than actually we haven't trained our model
+on that data and it may limit our model for predicting result
+for similar data point that may come in future.
+ex: if we have removed all houses above price 10 crore by
+considering them as outlier and in future a data point comes 
+with similar features as that outlier house than our model may 
+predict correct price.
+(model is not suitable for houses prices over 10 crores)
+
 
 2. range and limits
 we need to decide what will constitute an outlier with some
@@ -17,5 +27,5 @@ methodology
 3. percentage of data
 • if a large percentage of dataset is being labeled as an outlier 
 then we actually just have a wide distribution, not outliers.
-• limit outliers to few percentage point a most.
+• limit outliers to few percentage point at most.
 
