@@ -1,3 +1,10 @@
+Code
+=============
+
+
+Cross Validation is a more advanced set of methods for splitting data into 
+training and testing sets.
+
 1. Cross Validation
 • theory
 • train | test split
@@ -5,4 +12,23 @@
 • scikit-learn cross_val_score
 • scikit-learn cross_validate
 
-2. grid search
+• we understand the intuition behind performing a train test split, we want 
+to fairly evaluate our model's performance on unseen data.
+Unfortunately this means we are not able to tune hyperparameters to the 
+entire dataset.
+
+• the main reason of cross validation is train model on complete dataset 
+such that hyperparameters tuned using entire dataset.
+
+• Cross validation allows us to train our model on complete dataset 
+
+• How cross validation works
+    1. we take K size of data as test and rest as train 
+    2. and we do it again and again taking different data points in k and 
+    rest in train
+    3. so repeating this K number of times we will be able to train model
+       on complete data set.
+
+• cost of cross validation is that we have to repeat is k no of times.
+
+
