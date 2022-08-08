@@ -39,4 +39,20 @@ affect our model performance.
 with domain knowledge as wrong data will cause model to read 
 wrong trend or wrong information which will greatly affect model 
 prediction.
-    
+    • potentially changing ground truth in data.
+    • must decide on reasonable extimation to filled value.
+    • must apply transformation to all future data for predictions.
+    • filling methods
+        • simplest case 
+          replace all NaN values with a reasonable assumption (e.g zero if 
+          assumned NaN implied zero).
+          ex- filling children column as 0 for NaN value.
+        • harder case
+          must use statistical methods based on other columns to fill in NaN
+          values.
+          ex - dataset about people with some age data missing 
+               than we can't just fill the age with 0 or some arbitraty value 
+               but we could some statistics like 
+               there current education, martial status, voting status
+               etc to get a valid age value.
+

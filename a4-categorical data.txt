@@ -1,0 +1,114 @@
+Dealing with categorical data.
+
+Many machine learning models can not deal with categorical data set as strings. For example linear regression can not apply a a Beta Coefficent to colors like "red" or "blue". Instead we need to convert these categories into "dummy" variables, otherwise known as "one-hot" encoding.
+
+===================================================
+==> THEORY 
+
+•To handle categorical data we use following methods
+Interger encoding.
+One hot encoding or dummy variable.
+
+1. transforming information
+    • very common for string data
+        -> most algorithm can not accept string data
+           (we can't multiply "red" by a numeric coefficient)
+
+    • we can use two approached for transforming a string 
+      data to numerical data.
+        -> integer encoding
+        -> one hot encoding (DUMMY VARIABLES)
+
+2. Integer encoding
+    • we can directly convert categories to integers 
+        ex: usa - 0 , india - 1, china - 2
+    • possible issue is implied ordering and relationship
+      (ordnal variable)
+         -> here in above example we can see that the numbering
+            of countries is in order and ml algorithm may treat 
+            this as an information in data but actually it is not 
+            because here we have just gave numerical value to 
+            categorical features and thus this may affect the result 
+            of our model.
+    • we can say integer encoding in some way seems like a 
+      information to ml model and which is correct as it in
+      a order and had relationship like 1 < 2 and 2 > 1 etc.
+    
+    • in above example the model may assume that china is twice
+      the value of india and like that and may use this 
+      information in model tuning(hyper parameter tuning).
+
+    • but integer encoding may work out in places where categories do have
+      a relationship 
+      like : temp = hot, warm, cold
+             spice level = mild, normal, hot
+
+    • pros 
+        -> very easy to do and understand 
+        -> does not increase number of features (one hot encoding do).
+    • cons 
+        -> implies ordered relationship berween categories
+
+3. One hot encoding (dummy variables)
+    • convert each category into individual features that are either 0 or 1.
+        ex:  categoreis: use, canada , india
+        after one hot encoding
+        usa canada  india
+        1   0       0
+        0   1       0
+        0   0       1
+
+    so in actual dataset where "use" was there than there "usa" will have 1
+    and else will have zeros.
+
+    • 1 is that category and 0 otherwise
+    • no ordered relationship is implied between categories.
+    • however we greatly expanded our feature set ,many more columns
+    • we can try to reduce this feature column expansion by creating higher 
+      level categories.
+        -> but to achive higher level tuning it may require a lot of tuning and
+           domain experience.
+      ex: regions or continents instead of countries. 
+      (for dataset of social media users)
+    • pros
+        -> no ordering implied
+    • cons
+        -> potential to create many more feature columns and coefficients
+        -> dummy variable trap (mathematically known as multi-collinearity) problem
+        -> not easy to add new feature.
+======================================================
+===> Code 
+// we are going to see code for dummy variables
+
+pandas.get_dummies(
+ data, prefix=None,
+ prefix_sep='_', 
+ dummy_na=False, 
+ columns=None, 
+ sparse=False, 
+ drop_first=False, 
+ dtype=None)
+
+Parameters :-
+data : 
+array-like, Series, or DataFrame
+Data of which to get dummy indicators.
+
+drop_first : bool, default False
+Whether to get k-1 dummies out of k categorical 
+levels by removing the first level.
+
+* we don't have to worry about other parameters
+
+retuns :
+DataFrame : Dummy-coded data.
+
+
+# by converting all categorical columns to dummy variables we may end 
+# up having hundred of columns and the common question comes in our mind
+# is that do we are going to create coefficients(ß) for each of these newly
+# created columns but we will use regularization to check how many of these
+# features are important and will assign coefficiect according to it.
+# regularization : it helps us to choose the important columns.
+
+

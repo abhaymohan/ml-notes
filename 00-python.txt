@@ -1,0 +1,3 @@
+=====> Advance concepts
+1. Lazy evaluation in python
+link :- https://towardsdatascience.com/what-is-lazy-evaluation-in-python-9efb1d3bfed0#:~:text=If%20you've%20never%20heard,strategy%20to%20optimize%20your%20code.
