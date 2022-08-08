@@ -1,0 +1,8 @@
+1. Cross Validation
+• theory
+• train | test split
+• train | validation | test split
+• scikit-learn cross_val_score
+• scikit-learn cross_validate
+
+2. grid search

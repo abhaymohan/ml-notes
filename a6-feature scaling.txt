@@ -1,0 +1,82 @@
+Feature Scaling
+
+==> Theory
+
+• there are two main ways of feture scaling
+1. Standardization (Z-score Normalization)
+    rescales data to have a mean of 0 and 
+    standard deviation of 1.
+2. Normalization
+    rescales all data values to be 0 to 1;
+
+1.Feature scaling provides many benefits to our
+machine learning process.
+
+2. Some machine learning models that rely on 
+distance metrics (eg KNN) require scaling 
+to perform well.
+
+3. Feature scaling improves the convergence of steepest 
+descent algorithms (algorithms like gradient descent to minimize 
+the loss funtion or error function), which do not process the 
+property of scale invariance.
+• critical benefit of feature scaling are related to gradient descent.
+
+4. If features are on different scales, certain weights
+may update faster than others since the feature values 
+Xj (value of feature X for row j) play a role in weight updates.
+(weights here has similar meaning as coefficients (ß) )
+
+5. there are algorithms where scaling is not going to have any effect
+mostly CART(Classification And Regression Tree) algorithms
+like decision tree, random forest , mainly in decision tree based algorithms
+where we are not performing any sort of gradient descent to solve.
+
+6. Scaling the features so that their respective ranges are uniform
+it is important in comparing measurements that have different units.
+
+7. allow us to directly compare model coefficients for different features
+with each other.
+
+===> CONS 
+Feature scaling caveats
+• must always scale new unseen data before feeding to model.
+• directly affects the interpretability of feature coefficients
+    • easier to compare coefficients to one another, but harder to 
+      relate back to original unscaled data.
+    • we can say that if we have done scaling on data than we may not
+      relate how the data was before scaling if haven't stored 
+      its copy.
+
+==> benefits
+1. can lead to great increase in performance
+2. absolute necessary for few models (like: KNN)
+3. virtually no real downside of scaling features.
+
+
+==> Code 
+=> .fit() method  
+• .fit() method call simply calculated the necessary statistics (Xmin, Xmax
+mean, standard deviation)
+• we only fit to training data
+    calculating statistical information should only come from training data
+    don't want to assume prior knowledge of test set.
+• using full data set would cause data leakage
+    calculating statistics from full data leads to some information of the 
+    test set leaking into training process upon transform execution.
+
+
+=> .transform() call actually scales data and returns the new scaled data.
+
+=> feature scaling process
+    • perform train test split.
+    • fit to training feature data.
+    • tranform training data.
+    • transform test feature data.
+ 
+
+=> do we need to scale the label
+    • in general it is not necessary nor advised
+    • Normalization the output distribution is altering the definition
+      of the target
+    • predicting a distribution that doesn't mirror your real-world target.
