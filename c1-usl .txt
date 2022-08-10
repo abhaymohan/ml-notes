@@ -1,0 +1,40 @@
+theory
+
+1. supervised learning 
+using historical labeled data to predict a label on new
+data (regression or classification)
+
+2. unsupervised learning
+using unlableded data, to discover patterns, clusters, or 
+significant components.
+
+• clustering 
+using features, group together data rows into distinct clusters
+and than to find possible labels for those clusters
+ex - k-means clustering , hierarchical clustering , DBSCAN
+
+• dimensionality reduction 
+using features, discover how to combine and reduce into fewer 
+components
+ex - pca (principal component analysis)
+
+• supervised performance metrics will not apply for unsupervised learning
+
+• instead of metrics like RSME or accuracy, we will need to figure 
+out other ways of assessing unsupervised model performance or resonableness
+
+3. machine learning pathway for unsupervised learning
+a. collect and store data
+b. clean and organize data
+c. exploratory data analysis
+d. unsupervised learning model (to discover pattern in data)
+
+
+
+
+UNSUPERVISED LEARNING ALGORITHM LIST 
+
+1. kmeans clustering
+2. Density-based spatial clustering of applications with noise
+3. hierarchical clustering
+4. principal component Analysis
